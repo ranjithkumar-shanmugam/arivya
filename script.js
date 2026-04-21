@@ -54,14 +54,14 @@ if (feedbackForm && feedbackWall) {
     event.preventDefault();
 
     const name = document.getElementById("feedbackName").value.trim();
-    const type = document.getElementById("feedbackType").value;
+    const city = document.getElementById("feedbackType").value;
     const message = document.getElementById("feedbackMessage").value.trim();
 
     const feedbackCard = document.createElement("article");
     feedbackCard.className = "testimonial-card visible";
     feedbackCard.innerHTML = `
       <p>"${message}"</p>
-      <h3>${type} - ${name}</h3>
+      <h3>${name}, ${city}</h3>
     `;
 
     feedbackWall.prepend(feedbackCard);
