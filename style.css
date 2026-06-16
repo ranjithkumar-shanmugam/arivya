@@ -14,10 +14,10 @@
   --muted: #586887;
   --border: rgba(31, 73, 216, 0.12);
   --shadow: 0 24px 60px rgba(7, 16, 66, 0.16);
-  --header-bg: #dcecff;
-  --header-border: rgba(31, 73, 216, 0.16);
-  --header-text: #143064;
-  --header-muted: rgba(20, 48, 100, 0.72);
+  --header-bg: #0b1759;
+  --header-border: rgba(57, 215, 193, 0.22);
+  --header-text: #ffffff;
+  --header-muted: rgba(255, 255, 255, 0.78);
   --footer-bg: #dcecff;
   --footer-accent: #1f49d8;
   --footer-text: #143064;
@@ -101,11 +101,11 @@ img {
   top: 0;
   z-index: 100;
   background:
-    radial-gradient(circle at top right, rgba(10, 167, 214, 0.18), transparent 24%),
-    linear-gradient(135deg, #edf6ff, var(--header-bg) 55%, #cfe3ff 100%);
+    radial-gradient(circle at top right, rgba(57, 215, 193, 0.22), transparent 26%),
+    linear-gradient(135deg, #071042, var(--header-bg) 58%, #123a7a 100%);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--header-border);
-  box-shadow: 0 12px 30px rgba(31, 73, 216, 0.12);
+  box-shadow: 0 14px 34px rgba(7, 16, 66, 0.28);
 }
 
 .nav-bar {
@@ -127,8 +127,9 @@ img {
   height: 52px;
   border-radius: 16px;
   object-fit: contain;
-  background: rgba(255, 255, 255, 0.62);
-  box-shadow: 0 14px 28px rgba(31, 73, 216, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22), 0 0 0 4px rgba(57, 215, 193, 0.08);
 }
 
 .brand-text {
@@ -159,7 +160,7 @@ img {
 }
 
 .nav-links a:hover {
-  color: var(--footer-accent);
+  color: var(--accent-4);
 }
 
 .nav-toggle {
@@ -953,8 +954,8 @@ img {
     align-items: flex-start;
     padding: 1rem;
     background:
-      radial-gradient(circle at top right, rgba(10, 167, 214, 0.18), transparent 24%),
-      linear-gradient(135deg, #edf6ff, var(--header-bg) 55%, #cfe3ff 100%);
+      radial-gradient(circle at top right, rgba(57, 215, 193, 0.2), transparent 28%),
+      linear-gradient(135deg, #071042, var(--header-bg) 58%, #123a7a 100%);
     border: 1px solid var(--header-border);
     border-radius: 20px;
     box-shadow: var(--shadow);
