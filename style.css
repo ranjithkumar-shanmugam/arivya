@@ -609,6 +609,40 @@ img {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.service-item {
+  min-height: 88px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 40px rgba(7, 16, 66, 0.08);
+}
+
+.service-item span {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(57, 215, 193, 0.18), rgba(255, 203, 56, 0.18));
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.service-item strong {
+  line-height: 1.25;
+}
+
 .card-icon {
   width: 52px;
   height: 52px;
@@ -623,6 +657,12 @@ img {
 
 .steps-layout {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.approach-layout {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
 .step-card {
@@ -657,6 +697,24 @@ img {
   border-radius: 28px;
   display: block;
   box-shadow: var(--shadow);
+}
+
+.vision-panel {
+  margin-top: 1.8rem;
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(31, 73, 216, 0.12);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 248, 223, 0.82)),
+    var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.vision-panel h3 {
+  max-width: 860px;
+  margin: 0;
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  line-height: 1.18;
 }
 
 .about-shell {
@@ -989,6 +1047,7 @@ img {
   .content-split,
   .card-grid,
   .steps-layout,
+  .approach-layout,
   .service-summary,
   .testimonial-grid,
   .feedback-page-grid,
@@ -997,6 +1056,10 @@ img {
   .cta-band,
   .service-card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .services-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1026,8 +1089,17 @@ img {
 
   .hero-card,
   .contact-form,
-  .feedback-box {
+  .feedback-box,
+  .vision-panel {
     padding: 1.4rem;
+  }
+
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+
+  .service-item {
+    min-height: 78px;
   }
 
   .whatsapp-float {
