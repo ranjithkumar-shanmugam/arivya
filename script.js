@@ -31,6 +31,24 @@ const googleContactFormMetadata = {
   },
 };
 
+function normalizeIndianMobileNumber(value) {
+  const digits = value.replace(/\D/g, "");
+  return digits.length === 12 && digits.startsWith("91") ? digits.slice(2) : digits;
+}
+
+function validatePhoneInput(phoneInput) {
+  const phone = normalizeIndianMobileNumber(phoneInput.value);
+  const isValid = /^[6-9]\d{9}$/.test(phone);
+
+  phoneInput.setCustomValidity(
+    phoneInput.value && !isValid
+      ? "Enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9."
+      : ""
+  );
+
+  return isValid;
+}
+
 const fallbackFeedbacks = [
   {
     name: "Lakshmi R",
@@ -295,15 +313,23 @@ async function initializeFeedbackViews() {
 }
 
 if (contactForm) {
+  const phoneInput = contactForm.querySelector("#phone");
+
+  if (phoneInput) {
+    phoneInput.addEventListener("input", () => validatePhoneInput(phoneInput));
+    phoneInput.addEventListener("blur", () => validatePhoneInput(phoneInput));
+  }
+
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
+    const phone = normalizeIndianMobileNumber(document.getElementById("phone").value);
     const message = document.getElementById("message").value.trim();
     const submitButton = contactForm.querySelector('button[type="submit"]');
 
-    if (!name || !phone || !message) {
+    if (!name || !message || !phoneInput || !validatePhoneInput(phoneInput)) {
+      contactForm.reportValidity();
       return;
     }
 

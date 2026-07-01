@@ -320,13 +320,13 @@
 
             <form class="feedback-form" id="feedbackForm">
               <label for="feedbackName">Name</label>
-              <input id="feedbackName" name="feedbackName" type="text" required />
+              <input id="feedbackName" name="feedbackName" type="text" minlength="2" maxlength="60" autocomplete="name" required />
 
               <label for="feedbackCity">City</label>
-              <input id="feedbackCity" name="feedbackCity" type="text" required />
+              <input id="feedbackCity" name="feedbackCity" type="text" minlength="2" maxlength="60" autocomplete="address-level2" required />
 
               <label for="feedbackMessage">Feedback</label>
-              <textarea id="feedbackMessage" name="feedbackMessage" rows="4" required></textarea>
+              <textarea id="feedbackMessage" name="feedbackMessage" rows="4" minlength="10" maxlength="1000" required></textarea>
 
               <button class="btn btn-primary" type="submit">Submit Feedback</button>
             </form>
@@ -352,13 +352,13 @@
 
           <form class="contact-form reveal" id="contactForm">
             <label for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Enter your name" required />
+            <input id="name" name="name" type="text" placeholder="Enter your name" minlength="2" maxlength="60" autocomplete="name" required />
 
             <label for="phone">Phone</label>
-            <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" required />
+            <input id="phone" name="phone" type="tel" placeholder="10-digit mobile number" inputmode="numeric" autocomplete="tel" maxlength="14" required />
 
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell us what you want guidance for" required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us what you want guidance for" minlength="10" maxlength="1000" required></textarea>
 
             <button class="btn btn-primary" type="submit">Submit</button>
           </form>
